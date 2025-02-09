@@ -13,3 +13,6 @@ Neon
 Formater:
 autopep8
 djlint
+
+util:
+WhiteNoise

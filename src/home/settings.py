@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -7,7 +8,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-7&eg=u=v=n=h5*z!^mp-8g@51!k)$&v8(wf8gr*hn%_sjznxif'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = str(os.environ.get("DJANGO_DEBUG")).lower() == "true"
+
+print("DEBUG: ", DEBUG, type(DEBUG))
+
 
 ALLOWED_HOSTS = [
     ".railway.app"  # https://sass.prod.railway.app

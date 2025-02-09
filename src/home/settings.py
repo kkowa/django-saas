@@ -120,6 +120,17 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATIC_BASE_DIR = BASE_DIR / 'static/'
+STATIC_VENDOR_DIR = STATIC_BASE_DIR / 'vendor'
+
+# source(s) for python manage.py collectistatic
+STATICFILES_DIRS = [
+    STATIC_BASE_DIR
+]
+
+# output for python manage.py collectstatic
+STATIC_ROOT = BASE_DIR / 'local-cnd'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 

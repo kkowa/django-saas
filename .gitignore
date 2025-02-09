@@ -1,1 +1,7 @@
 .env
+
+# ignore vendor
+src/static/vendors
+
+# ignore local cdn (content delivery network)
+local-cdn

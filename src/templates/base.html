@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Your description here" />
         <meta name="keywords" content="keyword1, keyword2, keyword3" />
+        {% include "base/css.html" %}
         <title>
             {% block title %}
                 SaaS
@@ -13,8 +14,10 @@
         </title>
     </head>
     <body>
+        {% include "nav/nav.html" %}
         <h1>{{ page_title }}</h1>
         {% block content %}
         {% endblock content %}
+        {% include "base/js.html" %}
     </body>
 </html>

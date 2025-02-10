@@ -5,3 +5,9 @@ src/static/vendors
 
 # ignore local cdn (content delivery network)
 local-cdn
+static
+
+__pycache__
+
+
+

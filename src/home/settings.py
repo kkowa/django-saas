@@ -138,7 +138,7 @@ STATICFILES_DIRS = [
 STATIC_ROOT = BASE_DIR / 'local-cnd'
 STORAGES = {
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
 # Default primary key field type

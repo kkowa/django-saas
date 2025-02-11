@@ -51,7 +51,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # my-apps
     "commando",
-    "visits"
+    "visits",
+    # third-party apps
+    'allauth_ui',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'widget_tweaks',
+    'slippers',
 
 ]
 
@@ -64,7 +71,9 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    "allauth.account.middleware.AccountMiddleware",
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 
 ]
 
@@ -129,6 +138,19 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Django Allauth
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_SUBJECT_PREFIX = '[Project Name]'
+ACCOUNT_EMAIL_REQUIRED = True
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SOCIALACCOUNT_PROVIDERS = {
+
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/

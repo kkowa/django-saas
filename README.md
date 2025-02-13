@@ -1,24 +1,37 @@
-Tech stack:
+# Project Overview
 
-Python
-Django
+This project is built using the following technologies and tools:
 
-DEPLOYMENT:
-Docker
-Railway
+## Tech Stack
 
-DB:
-Neon
+- **Backend**: Python, Django
+- **Deployment**: Docker, Railway
+- **Database**: Neon
+- **Code Formatting**:
+  - Python: `autopep8`
+  - Django Templates: `djlint`
+- **Utilities**: WhiteNoise (for static files)
 
-Formater:
-autopep8
-djlint
+## To-Do List
 
-util:
-WhiteNoise
+### Deployment & Infrastructure
 
-To do:
-Switch from white noise to S3 for user uploads
-Look into the email with sntp
-could integrate with plaid for a fun project
-switch from allauth-ui to tailwind or custom templates - the custom elements do not work as they should - there is a problem with library and rendering the static - coping over their css is nessesery 
+- [ ] Switch from WhiteNoise to S3 for handling user uploads.
+
+### Email Configuration
+
+- [ ] Investigate and configure email functionality using SMTP.
+
+### Integrations
+
+- [ ] Explore integrating with Plaid for a fun side feature.
+
+### Frontend Improvements
+
+- [ ] Replace `allauth-ui` with Tailwind CSS or custom templates.
+  - **Issue**: Custom elements in `allauth-ui` are not rendering correctly due to library and static file rendering problems.
+  - **Workaround**: Manually copy over the necessary CSS from the library.
+
+---
+
+Feel free to contribute or suggest improvements!

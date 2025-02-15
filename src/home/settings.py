@@ -136,7 +136,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
 # Django Allauth
+# hiding staff only url.
+LOGIN_URL = "/accounts/login/"
 LOGIN_REDIRECT_URL = "/"
 ACCOUNT_LOGIN_METHODS = ['email']
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'

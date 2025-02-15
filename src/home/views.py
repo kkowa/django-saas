@@ -1,6 +1,11 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 from visits.models import PageVisit
+from django.conf import settings
+
+LOGIN_URL = settings.LOGIN_URL
+VALID_CODE = "ABC123"
 
 
 def home_view(request, *args, **kwargs):
@@ -23,9 +28,6 @@ def home_view(request, *args, **kwargs):
     return render(request, html_template, my_context)
 
 
-VALID_CODE = "ABC123"
-
-
 def pw_protected_view(request, *args, **kwargs):
     is_allowed = request.session.get('protected_page_allowed') or 0
     # print(request.session.get('protected_page_allowed'),
@@ -43,3 +45,8 @@ def pw_protected_view(request, *args, **kwargs):
 @login_required
 def user_only_view(request, *args, **kwargs):
     return render(request, "protected/user-only.html", {})
+
+
+@staff_member_required(login_url=LOGIN_URL)
+def staff_only_view(request, *args, **kwargs):
+    return render(request, "protected/staff-only.html", {})

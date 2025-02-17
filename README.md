@@ -32,7 +32,5 @@ This project is built using the following technologies and tools:
   - **Issue**: Custom elements in `allauth-ui` are not rendering correctly due to library and static file rendering problems.
   - **Workaround**: Manually copy over the necessary CSS from the library.
 
-### Bugs
 
-- [ ] when signing in with socials, a confimation email is send that dose not have confirmation link but prompts user to reset password for the root user 
 
